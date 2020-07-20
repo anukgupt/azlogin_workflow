@@ -34,13 +34,13 @@ jobs:
         echo test, and deploy your project.
     - name: Azure Login
       env:
-        SUPER_SECRET: ${{ secrets.SuperSecret }}     
+        SUPER_SECRET: ${{ secrets.AZURE_CREDENTIALS }}     
       uses: Azure/login@v1
       with:
     # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{env.SUPER_SECRET}}
     - name: print secret
       env:
-        SUPER_SECRET: ${{ secrets.SuperSecret }}
+        SUPER_SECRET: ${{ secrets.AZURE_CREDENTIALS }}
       run: |
         example-command "$env:SUPER_SECRET"
