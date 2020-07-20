@@ -22,7 +22,7 @@ jobs:
     
     - name: Azure Login
       env:
-        SUPER_SECRET: ${{ secrets.AZURE_CREDENTIALS }}     
+        SUPER_SECRET: ${{secrets.AZURE_CREDENTIALS }}     
       uses: Azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS}}
+        creds: ${{secrets.AZURE_CREDENTIALS}}
